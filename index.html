@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GaBuu — Flowers & Knit Bouquets | Malaysia</title>
+  <meta name="description" content="GaBuu - Premium handcrafted flower and knit bouquets in Malaysia. Birthday, Graduation, Valentine's and Mother's Day arrangements delivered across Klang Valley." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <button class="nav-icon-btn" id="menuToggle" aria-label="Menu">
+        <span class="hamburger"></span><span class="hamburger"></span><span class="hamburger"></span>
+      </button>
+    </div>
+    <a href="#home" class="nav-logo" onclick="showPage('home')">
+      <span class="logo-text">GaBuu</span>
+      <span class="logo-sub">花束 · Bouquets</span>
+    </a>
+    <div class="nav-right">
+      <button class="nav-icon-btn" onclick="showPage('cart')" aria-label="Cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-menu" id="navMenu">
+    <a href="#" onclick="showPage('home');closeMenu()">Home 首页</a>
+    <a href="#" onclick="showPage('shop');closeMenu()">Shop 商品</a>
+    <a href="#" onclick="showPage('build');closeMenu()">Build Bouquet 自定花束</a>
+    <a href="#" onclick="showPage('about');closeMenu()">About Us 关于我们</a>
+    <a href="#" onclick="showPage('delivery');closeMenu()">Delivery 配送</a>
+    <a href="#" onclick="showPage('contact');closeMenu()">Contact 联系</a>
+  </div>
+</nav>
+
+<!-- ===== HOME PAGE ===== -->
+<div id="page-home" class="page active">
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-blob blob1"></div>
+      <div class="hero-blob blob2"></div>
+      <div class="hero-blob blob3"></div>
+    </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Malaysia's Premier Floral Atelier · 马来西亚精品花艺工作室</p>
+      <h1 class="hero-title">每束花<br/><em>都是无声的爱</em></h1>
+      <p class="hero-subtitle">Every bouquet tells a story — handcrafted with the finest fresh blooms & artisan knit florals, delivered with love across Klang Valley.</p>
+      <div class="hero-cta">
+        <button class="btn-primary" onclick="showPage('shop')">Shop Now 立即购买</button>
+        <button class="btn-ghost" onclick="showPage('build')">Build Your Bouquet 自定花束</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-frame">
+        <div class="hero-img-placeholder">
+          <div class="placeholder-icon">🌸</div>
+          <p>Hero Image</p>
+          <span>Please provide photo</span>
+        </div>
+        <div class="hero-img-badge">New Collection<br/>新系列</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee-wrap">
+    <div class="marquee-track">
+      <span>Fresh Blooms 鲜花 &nbsp;·&nbsp;</span>
+      <span>Knit Bouquets 针织花束 &nbsp;·&nbsp;</span>
+      <span>Same-Day Delivery 当日送达 &nbsp;·&nbsp;</span>
+      <span>Birthday 生日 &nbsp;·&nbsp;</span>
+      <span>Graduation 毕业 &nbsp;·&nbsp;</span>
+      <span>Valentine's 情人节 &nbsp;·&nbsp;</span>
+      <span>Mother's Day 母亲节 &nbsp;·&nbsp;</span>
+      <span>Klang Valley 雪隆区 &nbsp;·&nbsp;</span>
+      <span>Fresh Blooms 鲜花 &nbsp;·&nbsp;</span>
+      <span>Knit Bouquets 针织花束 &nbsp;·&nbsp;</span>
+      <span>Same-Day Delivery 当日送达 &nbsp;·&nbsp;</span>
+      <span>Birthday 生日 &nbsp;·&nbsp;</span>
+      <span>Graduation 毕业 &nbsp;·&nbsp;</span>
+      <span>Valentine's 情人节 &nbsp;·&nbsp;</span>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <section class="section categories-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Browse by Occasion · 按节日选购</p>
+        <h2 class="section-title">Shop the Collection</h2>
+      </div>
+      <div class="categories-grid">
+        <div class="cat-card" onclick="filterShop('birthday');showPage('shop')">
+          <div class="cat-img"><div class="cat-emoji">🎂</div></div>
+          <h3>Birthday 生日</h3>
+          <p>Celebrate in bloom</p>
+        </div>
+        <div class="cat-card" onclick="filterShop('graduation');showPage('shop')">
+          <div class="cat-img"><div class="cat-emoji">🎓</div></div>
+          <h3>Graduation 毕业</h3>
+          <p>Mark the milestone</p>
+        </div>
+        <div class="cat-card" onclick="filterShop('valentine');showPage('shop')">
+          <div class="cat-img"><div class="cat-emoji">💕</div></div>
+          <h3>Valentine's 情人节</h3>
+          <p>Express your love</p>
+        </div>
+        <div class="cat-card" onclick="filterShop('mothers');showPage('shop')">
+          <div class="cat-img"><div class="cat-emoji">🌷</div></div>
+          <h3>Mother's Day 母亲节</h3>
+          <p>Honor her always</p>
+        </div>
+        <div class="cat-card" onclick="filterShop('knit');showPage('shop')">
+          <div class="cat-img"><div class="cat-emoji">🧶</div></div>
+          <h3>Knit Bouquets 针织花束</h3>
+          <p>Forever blooms</p>
+        </div>
+        <div class="cat-card" onclick="filterShop('opening');showPage('shop')">
+          <div class="cat-img"><div class="cat-emoji">🎊</div></div>
+          <h3>Grand Opening 开业</h3>
+          <p>Wish them well</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="section featured-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Editor's Picks · 精选推荐</p>
+        <h2 class="section-title">Most Loved Bouquets</h2>
+      </div>
+      <div class="products-grid" id="featuredGrid"></div>
+      <div class="center-btn">
+        <button class="btn-primary" onclick="showPage('shop')">View All Products 查看全部</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Build Your Bouquet Banner -->
+  <section class="section byob-banner">
+    <div class="container">
+      <div class="byob-inner">
+        <div class="byob-text">
+          <p class="section-eyebrow">New Feature · 全新功能</p>
+          <h2>Build Your Own Bouquet<br/><em>打造专属花束</em></h2>
+          <p>Choose your flowers, colours, size and message. We'll craft it just for you.</p>
+          <p class="cn-text">选择你喜爱的花材、颜色、尺寸和留言卡，我们为你专属定制。</p>
+          <button class="btn-primary" onclick="showPage('build')">Start Building 开始定制</button>
+        </div>
+        <div class="byob-visual">
+          <div class="byob-steps">
+            <div class="step"><span class="step-num">01</span><span>Choose Flowers 选花材</span></div>
+            <div class="step"><span class="step-num">02</span><span>Pick Colours 选色系</span></div>
+            <div class="step"><span class="step-num">03</span><span>Select Size 选尺寸</span></div>
+            <div class="step"><span class="step-num">04</span><span>Add Message 写留言</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Customer Love · 顾客评价</p>
+        <h2 class="section-title">What Our Customers Say</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"The knit bouquet I ordered for my mum's birthday was absolutely gorgeous. She still has it on her dresser months later. Will definitely order again!"</p>
+          <div class="reviewer">— Sarah L., Kuala Lumpur</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"GaBuu的花束真的太美了！我帮朋友订了毕业花束，她非常感动。包装精美，花材新鲜，服务也很贴心。强烈推荐！"</p>
+          <div class="reviewer">— 美玲, PJ</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Ordered the custom bouquet for Valentine's Day — the Build Your Own feature made it so personal. She absolutely loved it. Prompt delivery too!"</p>
+          <div class="reviewer">— Amir H., Subang Jaya</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Instagram Strip -->
+  <section class="section insta-section">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Follow Us · 关注我们</p>
+        <h2 class="section-title">@gabuu.blooms</h2>
+      </div>
+      <div class="insta-grid">
+        <div class="insta-item"><div class="insta-placeholder">📷</div></div>
+        <div class="insta-item"><div class="insta-placeholder">📷</div></div>
+        <div class="insta-item"><div class="insta-placeholder">📷</div></div>
+        <div class="insta-item"><div class="insta-placeholder">📷</div></div>
+        <div class="insta-item"><div class="insta-placeholder">📷</div></div>
+        <div class="insta-item"><div class="insta-placeholder">📷</div></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ===== SHOP PAGE ===== -->
+<div id="page-shop" class="page">
+  <div class="page-hero-sm">
+    <h1>Our Collection 花束系列</h1>
+    <p>Handcrafted with love · 用心制作</p>
+  </div>
+  <div class="container shop-layout">
+    <!-- Filters Sidebar -->
+    <aside class="shop-sidebar">
+      <h3 class="filter-title">Filter 筛选</h3>
+
+      <div class="filter-group">
+        <h4>Occasion 节日</h4>
+        <label><input type="checkbox" value="birthday" onchange="applyFilters()"> Birthday 生日</label>
+        <label><input type="checkbox" value="graduation" onchange="applyFilters()"> Graduation 毕业</label>
+        <label><input type="checkbox" value="valentine" onchange="applyFilters()"> Valentine's 情人节</label>
+        <label><input type="checkbox" value="mothers" onchange="applyFilters()"> Mother's Day 母亲节</label>
+        <label><input type="checkbox" value="opening" onchange="applyFilters()"> Grand Opening 开业</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Type 类型</h4>
+        <label><input type="checkbox" value="fresh" onchange="applyFilters()"> Fresh Flowers 鲜花</label>
+        <label><input type="checkbox" value="knit" onchange="applyFilters()"> Knit Bouquet 针织花束</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Budget 预算</h4>
+        <label><input type="checkbox" value="budget-low" onchange="applyFilters()"> Under RM100</label>
+        <label><input type="checkbox" value="budget-mid" onchange="applyFilters()"> RM100 – RM200</label>
+        <label><input type="checkbox" value="budget-high" onchange="applyFilters()"> RM200+</label>
+      </div>
+
+      <div class="filter-group">
+        <h4>Colour 色系</h4>
+        <label><input type="checkbox" value="pink" onchange="applyFilters()"> <span class="color-dot" style="background:#f4a0b0"></span> Pink 粉色</label>
+        <label><input type="checkbox" value="white" onchange="applyFilters()"> <span class="color-dot" style="background:#f5f0e8;border:1px solid #ccc"></span> White 白色</label>
+        <label><input type="checkbox" value="red" onchange="applyFilters()"> <span class="color-dot" style="background:#c0392b"></span> Red 红色</label>
+        <label><input type="checkbox" value="purple" onchange="applyFilters()"> <span class="color-dot" style="background:#9b59b6"></span> Purple 紫色</label>
+        <label><input type="checkbox" value="yellow" onchange="applyFilters()"> <span class="color-dot" style="background:#f1c40f"></span> Yellow 黄色</label>
+        <label><input type="checkbox" value="mixed" onchange="applyFilters()"> Mixed 混色</label>
+      </div>
+
+      <button class="btn-ghost btn-sm" onclick="clearFilters()">Clear Filters 清除</button>
+    </aside>
+
+    <!-- Products Grid -->
+    <div class="shop-main">
+      <div class="shop-toolbar">
+        <p class="results-count" id="resultsCount">Showing all products</p>
+        <select class="sort-select" onchange="sortProducts(this.value)">
+          <option value="">Sort by 排序</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+      <div class="products-grid" id="shopGrid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PRODUCT DETAIL PAGE ===== -->
+<div id="page-product" class="page">
+  <div class="container">
+    <button class="back-btn" onclick="showPage('shop')">← Back to Shop 返回</button>
+    <div class="product-detail" id="productDetail"></div>
+  </div>
+</div>
+
+<!-- ===== BUILD YOUR BOUQUET PAGE ===== -->
+<div id="page-build" class="page">
+  <div class="page-hero-sm">
+    <h1>Build Your Bouquet 自定花束</h1>
+    <p>Create something uniquely yours · 打造专属的你</p>
+  </div>
+  <div class="container">
+    <div class="build-layout">
+      <!-- Step 1 -->
+      <div class="build-step" id="buildStep1">
+        <div class="step-header"><span class="step-circle">1</span><h3>Choose Type 选择类型</h3></div>
+        <div class="build-options">
+          <div class="build-option-card" onclick="selectBuildOption('type','fresh',this)">
+            <div class="build-option-icon">🌸</div>
+            <h4>Fresh Flowers 鲜花</h4>
+            <p>Classic beauty, vibrant scent</p>
+          </div>
+          <div class="build-option-card" onclick="selectBuildOption('type','knit',this)">
+            <div class="build-option-icon">🧶</div>
+            <h4>Knit Bouquet 针织花束</h4>
+            <p>Lasts forever, unique texture</p>
+          </div>
+          <div class="build-option-card" onclick="selectBuildOption('type','mixed',this)">
+            <div class="build-option-icon">✨</div>
+            <h4>针织品</h4>
+            <p>Best of both worlds</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="build-step" id="buildStep2">
+        <div class="step-header"><span class="step-circle">2</span><h3>Choose Flowers 选花材</h3></div>
+        <div class="build-options flowers-grid">
+          <div class="build-option-card" onclick="toggleFlower('Rose 玫瑰',this)"><div class="build-option-icon">🌹</div><h4>Rose 玫瑰</h4><p>+RM15/stem</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Tulip 郁金香',this)"><div class="build-option-icon">🌷</div><h4>Tulip 郁金香</h4><p>+RM12/stem</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Sunflower 向日葵',this)"><div class="build-option-icon">🌻</div><h4>Sunflower 向日葵</h4><p>+RM10/stem</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Peony 牡丹',this)"><div class="build-option-icon">🌺</div><h4>Peony 牡丹</h4><p>+RM20/stem</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Baby\'s Breath 满天星',this)"><div class="build-option-icon">🤍</div><h4>Baby's Breath 满天星</h4><p>+RM8/bunch</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Eucalyptus 尤加利',this)"><div class="build-option-icon">🌿</div><h4>Eucalyptus 尤加利</h4><p>+RM8/sprig</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Eucalyptus 尤加利',this)"><div class="build-option-icon">🌿</div><h4>Eucalyptus 尤加利</h4><p>+RM8/sprig</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Eucalyptus 尤加利',this)"><div class="build-option-icon">🌿</div><h4>Eucalyptus 尤加利</h4><p>+RM8/sprig</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Eucalyptus 尤加利',this)"><div class="build-option-icon">🌿</div><h4>Eucalyptus 尤加利</h4><p>+RM8/sprig</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Eucalyptus 尤加利',this)"><div class="build-option-icon">🌿</div><h4>Eucalyptus 尤加利</h4><p>+RM8/sprig</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Eucalyptus 尤加利',this)"><div class="build-option-icon">🌿</div><h4>Eucalyptus 尤加利</h4><p>+RM8/sprig</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Eucalyptus 尤加利',this)"><div class="build-option-icon">🌿</div><h4>Eucalyptus 尤加利</h4><p>+RM8/sprig</p></div>
+          <div class="build-option-card" onclick="toggleFlower('Eucalyptus 尤加利',this)"><div class="build-option-icon">🌿</div><h4>Eucalyptus 尤加利</h4><p>+RM8/sprig</p></div>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="build-step" id="buildStep3">
+        <div class="step-header"><span class="step-circle">3</span><h3>Choose Colour Palette 选色系</h3></div>
+        <div class="build-options">
+          <div class="build-option-card" onclick="selectBuildOption('color','Soft Pink 粉嫩系',this)">
+            <div class="color-swatch" style="background:linear-gradient(135deg,#f9c6d0,#fde8ed,#f4a0b0)"></div>
+            <h4>Pinky 粉系</h4>
+          </div>
+          <div class="build-option-card" onclick="selectBuildOption('color','Cream White 奶白系',this)">
+            <div class="color-swatch" style="background:linear-gradient(135deg,#fdf6ec,#f5f0e8,#ede8dc)"></div>
+            <h4>Cream White 奶白系</h4>
+          </div>
+          <div class="build-option-card" onclick="selectBuildOption('color','Deep Red 热情红',this)">
+            <div class="color-swatch" style="background:linear-gradient(135deg,#c0392b,#e74c3c,#922b21)"></div>
+            <h4></h4>
+          </div>
+          <div class="build-option-card" onclick="selectBuildOption('color','Purple Dream 紫梦系',this)">
+            <div class="color-swatch" style="background:linear-gradient(135deg,#9b59b6,#d2b4de,#7d3c98)"></div>
+            <h4>Purple Dream 紫梦系</h4>
+          </div>
+          <div class="build-option-card" onclick="selectBuildOption('color','Sage Green 绿意系',this)">
+            <div class="color-swatch" style="background:linear-gradient(135deg,#b8d8be,#d4edda,#88b99a)"></div>
+            <h4>Sage Green 绿意系</h4>
+          </div>
+          <div class="build-option-card" onclick="selectBuildOption('color','Sunset Mix 日落混色',this)">
+            <div class="color-swatch" style="background:linear-gradient(135deg,#f39c12,#e74c3c,#9b59b6)"></div>
+            <h4></h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="build-step" id="buildStep4">
+        <div class="step-header"><span class="step-circle">4</span><h3>Choose Size 选尺寸</h3></div>
+        <div class="build-options">
+          <div class="build-option-card" onclick="selectBuildOption('size','Small 小束 (RM88)',this)">
+            <div class="build-option-icon" style="font-size:1.5rem">S</div>
+            <h4>Small</h4>
+            <p>~5 stems · From RM98</p>
+          </div>
+          <div class="build-option-card" onclick="selectBuildOption('size','Medium 中束 (RM148)',this)">
+            <div class="build-option-icon" style="font-size:1.5rem">M</div>
+            <h4>Medium</h4>
+            <p>~18 stems · From RM198</p>
+          </div>
+          <div class="build-option-card" onclick="selectBuildOption('size','Large 大束 (RM228)',this)">
+            <div class="build-option-icon" style="font-size:1.5rem">L</div>
+            <h4>Large</h4>
+            <p>~28 stems · From RM268</p>
+          </div>
+          <div class="build-option-card" onclick="selectBuildOption('size','Grand 豪华束 (RM388)',this)">
+            <div class="build-option-icon" style="font-size:1.5rem">XL</div>
+            <h4>Grand</h4>
+            <p>~40 stems · From RM388</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="build-step" id="buildStep5">
+        <div class="step-header"><span class="step-circle">5</span><h3>Personalise 个性化定制</h3></div>
+        <div class="build-form">
+          <div class="form-row">
+            <label>Occasion 场合</label>
+            <select id="buildOccasion" class="form-input">
+              <option value="">Select 选择</option>
+              <option>Birthday 生日</option>
+              <option>Graduation 毕业</option>
+              <option>Valentine's Day 情人节</option>
+              <option>Mother's Day 母亲节</option>
+              <option>Anniversary 周年纪念</option>
+              <option>Grand Opening 开业</option>
+              <option>Other 其他</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Greeting Card Message 贺卡留言</label>
+            <textarea id="buildMessage" class="form-input" rows="4" placeholder="Write your heartfelt message here... 写下你的心意..."></textarea>
+          </div>
+          <div class="form-row">
+            <label>Wrapping Style 包装风格</label>
+            <select id="buildWrap" class="form-input">
+              <option>Kraft Paper 牛皮纸</option>
+              <option>Velvet Ribbon 丝绒缎带</option>
+              <option>Floral Wrap 花纹包装纸</option>
+              <option>Minimalist White 简约白</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Add-ons 配件 (optional)</label>
+            <div class="addons-grid">
+              <label class="addon-item"><input type="checkbox" value="teddy"> 🧸 Teddy Bear +RM49</label>
+              <label class="addon-item"><input type="checkbox" value="choc"> 🍫 Chocolates +RM39</label>
+              <label class="addon-item"><input type="checkbox" value="perfume"> 🕯️ Scented Candle +RM39</label>
+              <label class="addon-item"><input type="checkbox" value="balloon"> 🎈 Mini Balloon +RM39</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div class="build-summary" id="buildSummary">
+        <h3>Your Custom Bouquet 您的专属花束</h3>
+        <div id="summaryContent">
+          <p class="summary-empty">Start selecting options above to build your bouquet.</p>
+        </div>
+        <div class="summary-price">
+          <span>Estimated Price 预估价格</span>
+          <span id="summaryPrice">From RM88</span>
+        </div>
+        <button class="btn-primary full-width" onclick="addCustomToCart()">Add to Cart 加入购物车</button>
+        <p class="summary-note">Final price confirmed via WhatsApp after order · 最终价格将通过 WhatsApp 确认</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CART PAGE ===== -->
+<div id="page-cart" class="page">
+  <div class="page-hero-sm">
+    <h1>Shopping Cart 购物车</h1>
+  </div>
+  <div class="container">
+    <div class="cart-layout">
+      <div class="cart-items" id="cartItems">
+        <div class="empty-cart">
+          <div class="empty-icon">🛒</div>
+          <h3>Your cart is empty 购物车是空的</h3>
+          <p>Add some beautiful bouquets! 快来挑选美丽的花束吧！</p>
+          <button class="btn-primary" onclick="showPage('shop')">Shop Now 去购物</button>
+        </div>
+      </div>
+      <div class="cart-summary" id="cartSummary" style="display:none">
+        <h3>Order Summary 订单摘要</h3>
+        <div class="summary-row"><span>Subtotal 小计</span><span id="subtotal">RM0</span></div>
+        <div class="summary-row"><span>Delivery 运费</span><span>RM30 (Klang Valley)</span></div>
+        <div class="summary-row total-row"><span>Total 总计</span><span id="cartTotal">RM30</span></div>
+        <button class="btn-primary full-width" onclick="showPage('checkout')">Checkout 结账</button>
+        <button class="btn-ghost full-width" onclick="showPage('shop')">Continue Shopping 继续购物</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CHECKOUT PAGE ===== -->
+<div id="page-checkout" class="page">
+  <div class="page-hero-sm">
+    <h1>Checkout 结账</h1>
+  </div>
+  <div class="container">
+    <div class="checkout-layout">
+      <div class="checkout-form-wrap">
+        <h3>Recipient Details 收花人资料</h3>
+        <div class="form-grid">
+          <div class="form-row">
+            <label>Recipient Name 收花人姓名 *</label>
+            <input type="text" id="co-name" class="form-input" placeholder="Full name 全名" />
+          </div>
+          <div class="form-row">
+            <label>Phone Number 电话号码 *</label>
+            <input type="tel" id="co-phone" class="form-input" placeholder="+60 12 345 6789" />
+          </div>
+          <div class="form-row full-row">
+            <label>Delivery Address 送货地址 *</label>
+            <textarea id="co-address" class="form-input" rows="3" placeholder="Full address including postcode 请填写完整地址包括邮编"></textarea>
+          </div>
+          <div class="form-row">
+            <label>City 城市 *</label>
+            <select id="co-city" class="form-input" onchange="updateDeliveryFee()">
+              <option value="">Select city 选择城市</option>
+              <option value="kl">Kuala Lumpur 吉隆坡</option>
+              <option value="pj">Petaling Jaya</option>
+              <option value="subang">Subang Jaya</option>
+              <option value="shah-alam">Shah Alam</option>
+              <option value="klang">Klang 巴生</option>
+              <option value="ampang">Ampang</option>
+              <option value="cheras">Cheras</option>
+              <option value="other">Other areas 其他地区</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label>Delivery Date 配送日期 *</label>
+            <input type="date" id="co-date" class="form-input" />
+          </div>
+          <div class="form-row">
+            <label>Delivery Time 配送时间</label>
+            <select id="co-time" class="form-input">
+              <option>Morning 早上 (9am–12pm)</option>
+              <option>Afternoon 下午 (12pm–3pm)</option>
+              <option>Evening 傍晚 (3pm–6pm)</option>
+            </select>
+          </div>
+          <div class="form-row full-row">
+            <label>Greeting Card Message 贺卡留言</label>
+            <textarea id="co-message" class="form-input" rows="3" placeholder="Optional message for the greeting card 可选留言"></textarea>
+          </div>
+        </div>
+
+        <h3 class="mt-lg">Payment Method 付款方式</h3>
+        <div class="payment-options">
+          <label class="payment-option">
+            <input type="radio" name="payment" value="online" checked />
+            <span>Online Banking / eWallet 网络银行 / 电子钱包</span>
+          </label>
+          <label class="payment-option">
+            <input type="radio" name="payment" value="whatsapp" />
+            <span>Pay via WhatsApp Confirmation 通过WhatsApp确认付款</span>
+          </label>
+        </div>
+
+        <div class="delivery-fee-notice" id="deliveryFeeNotice">
+          <p>🚚 Klang Valley delivery: <strong>RM30</strong> · Other areas: varies by distance 其他地区根据距离收费</p>
+        </div>
+
+        <button class="btn-whatsapp full-width" onclick="proceedToWhatsApp()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Confirm Order via WhatsApp 通过WhatsApp确认订单
+        </button>
+      </div>
+
+      <div class="checkout-summary">
+        <h3>Order Summary 订单摘要</h3>
+        <div id="checkoutItems"></div>
+        <hr/>
+        <div class="summary-row"><span>Subtotal 小计</span><span id="coSubtotal">RM0</span></div>
+        <div class="summary-row"><span>Delivery 运费</span><span id="coDelivery">RM30</span></div>
+        <div class="summary-row total-row"><span>Total 总计</span><span id="coTotal">RM30</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT PAGE ===== -->
+<div id="page-about" class="page">
+  <div class="page-hero-sm">
+    <h1>About GaBuu 关于我们</h1>
+    <p>Our story · 我们的故事</p>
+  </div>
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-story">
+        <div class="about-img-placeholder">
+          <div class="placeholder-icon">🌺</div>
+          <p>Brand Story Photo</p>
+        </div>
+      </div>
+      <div class="about-text">
+        <h2>More Than Just Flowers<br/><em>不只是一束花</em></h2>
+        <p>GaBuu was born from a simple belief — that flowers are the most beautiful language of love. Founded in Kuala Lumpur, we are a boutique floral atelier dedicated to creating handcrafted bouquets that carry genuine emotion.</p>
+        <p>GaBuu诞生于2023年的七夕节，在加影创立，是一家精品花艺工作室，专注于打造充满真挚情感的手工花束。</p>
+        <p>From the finest fresh blooms sourced daily to our signature knit bouquets that last a lifetime, every creation at GaBuu is made with precision, artistry, and heart.</p>
+        <p>从独特的针织永生花束，到我们每日精心挑选的新鲜花材，GaBuu 的每一件作品都是用心、用艺、用爱打造的。</p>
+        <div class="about-values">
+          <div class="value-item"><span class="value-icon">✦</span><div><h4>Handcrafted 手工制作</h4><p>Every bouquet made by hand with care</p></div></div>
+          <div class="value-item"><span class="value-icon">✦</span><div><h4>Premium Quality 优质花材</h4><p>Only the finest blooms selected daily</p></div></div>
+          <div class="value-item"><span class="value-icon">✦</span><div><h4>Same-Day Delivery 当日送达</h4><p>Across Klang Valley with care</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="team-section">
+      <div class="section-header">
+        <p class="section-eyebrow">Our Florists · 我们的花艺师</p>
+        <h2 class="section-title">The Hands Behind GaBuu</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-img"><div class="placeholder-icon">👩</div></div>
+          <h4>Sarah Tan</h4>
+          <p>Founder & Lead Florist</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img"><div class="placeholder-icon">👩</div></div>
+          <h4>Mei Lin</h4>
+          <p>Knit Bouquet Artisan</p>
+        </div>
+        <div class="team-card">
+          <div class="team-img"><div class="placeholder-icon">👩</div></div>
+          <h4>Aisha Rahman</h4>
+          <p>Creative Director</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== DELIVERY PAGE ===== -->
+<div id="page-delivery" class="page">
+  <div class="page-hero-sm">
+    <h1>Delivery Info 配送说明</h1>
+    <p>We deliver with care · 用心配送</p>
+  </div>
+  <div class="container delivery-content">
+
+    <div class="delivery-highlight">
+      <div class="delivery-highlight-icon">🚚</div>
+      <h2>Same-Day Delivery Available 提供当日配送</h2>
+      <p>Order before 12pm for same-day delivery across Klang Valley · 中午12时前下单可享当日配送（雪隆区）</p>
+    </div>
+
+    <div class="delivery-grid">
+      <div class="delivery-card featured-card">
+        <h3>Klang Valley 雪隆区</h3>
+        <div class="price-badge">RM30</div>
+        <p>Covers: KL, PJ, Subang Jaya, Shah Alam, Klang, Ampang, Cheras, Puchong, Damansara and surrounding areas.</p>
+        <p>覆盖范围：吉隆坡、八打灵再也、梳邦再也、沙阿南、巴生、安邦、茨厂街周边等地区。</p>
+        <ul class="delivery-list">
+          <li>✓ Same-day delivery (order by 12pm) 当日送达</li>
+          <li>✓ Next-day delivery available 次日送达</li>
+          <li>✓ Scheduled delivery 预约配送</li>
+        </ul>
+      </div>
+      <div class="delivery-card">
+        <h3>Other Areas 其他地区</h3>
+        <div class="price-badge">Varies 按距离</div>
+        <p>Delivery to areas outside Klang Valley is available. Fees are calculated based on distance.</p>
+        <p>雪隆区以外地区亦可配送，运费根据距离计算。</p>
+        <p>Please contact us via WhatsApp for a delivery quote before placing your order.</p>
+        <p>下单前请先通过 WhatsApp 联系我们以获取运费报价。</p>
+      </div>
+    </div>
+
+    <div class="delivery-faq">
+      <h2>Delivery FAQ 常见问题</h2>
+      <div class="faq-item">
+        <h4>What are your delivery hours? 配送时间是？</h4>
+        <p>We deliver from 9am to 7pm daily, including weekends and public holidays. 我们每天上午9时至晚上7时配送，包括周末和公假。</p>
+      </div>
+      <div class="faq-item">
+        <h4>Can I schedule a specific delivery time? 可以指定配送时间吗？</h4>
+        <p>Yes! You can select morning (9am–12pm), afternoon (12pm–3pm), or evening (3pm–6pm) delivery slots. 可以！您可以选择早上、下午或傍晚的配送时段。</p>
+      </div>
+      <div class="faq-item">
+        <h4>What if the recipient is not home? 如果收花人不在怎么办？</h4>
+        <p>Our driver will contact the recipient before delivery. If unreachable, we'll reschedule at no extra cost. 司机会在送达前联系收花人，如无法联系将安排重新配送，不收额外费用。</p>
+      </div>
+      <div class="faq-item">
+        <h4>Do you deliver on public holidays? 公假也送吗？</h4>
+        <p>Yes, we operate year-round including public holidays. However, orders during festive periods (CNY, Hari Raya, Valentine's Day) should be placed 3–5 days in advance. 是的，我们全年运营包括公假。但节日期间（农历新年、开斋节、情人节）建议提前3-5天下单。</p>
+      </div>
+    </div>
+
+    <div class="delivery-notice">
+      <p>⚠️ For last-minute or urgent orders, please contact us directly on WhatsApp and we'll do our best to accommodate you.</p>
+      <p>如需紧急订单，请直接通过 WhatsApp 联系我们，我们将尽力安排。</p>
+      <button class="btn-whatsapp" onclick="window.open('https://wa.me/60123456789?text=Hi%20GaBuu%2C%20I%20need%20urgent%20delivery','_blank')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp Us 联系我们
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CONTACT PAGE ===== -->
+<div id="page-contact" class="page">
+  <div class="page-hero-sm">
+    <h1>Contact Us 联系我们</h1>
+    <p>We'd love to hear from you · 我们很乐意收到您的消息</p>
+  </div>
+  <div class="container">
+    <div class="contact-layout">
+      <div class="contact-cards">
+        <a href="https://wa.me/60126432729" target="_blank" class="contact-card whatsapp-card">
+          <div class="contact-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+          <h4>WhatsApp</h4>
+          <p>+60 12-643 2729</p>
+          <span class="contact-cta">Chat Now 立即聊天</span>
+        </a>
+        <a href="tel:+60126432729" class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h4>Phone 电话</h4>
+          <p>+60 12-643 2729</p>
+          <span class="contact-cta">Call Us 致电我们</span>
+        </a>
+        <a href="mailto:hello@gabuu.com" class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <h4>Email 电邮</h4>
+          <p>hello@gabuu.com</p>
+          <span class="contact-cta">Email Us 发送电邮</span>
+        </a>
+        <a href="https://instagram.com/gabuu.co/" target="_blank" class="contact-card">
+          <div class="contact-icon">📸</div>
+          <h4>Instagram</h4>
+          <p>@gabuu.co</p>
+          <span class="contact-cta">Follow Us 关注我们</span>
+        </a>
+      </div>
+
+      <div class="contact-form-wrap">
+        <h3>Send a Message 发送消息</h3>
+        <div class="form-grid">
+          <div class="form-row">
+            <label>Your Name 您的姓名</label>
+            <input type="text" class="form-input" placeholder="Name 姓名" />
+          </div>
+          <div class="form-row">
+            <label>Email 电邮</label>
+            <input type="email" class="form-input" placeholder="email@example.com" />
+          </div>
+          <div class="form-row full-row">
+            <label>Message 留言</label>
+            <textarea class="form-input" rows="5" placeholder="How can we help? 我们能如何帮助您？"></textarea>
+          </div>
+        </div>
+        <button class="btn-primary" onclick="sendContactForm()">Send Message 发送</button>
+
+        <div class="map-placeholder">
+          <div class="map-inner">
+            <div class="map-pin">📍</div>
+            <p>GaBuu Floral Atelier</p>
+            <p>Kuala Lumpur, Malaysia</p>
+            <a href="https://maps.google.com" target="_blank" class="btn-ghost btn-sm">Open in Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-logo">GaBuu</div>
+      <p class="footer-tagline">花束 · Bouquets · Malaysia</p>
+      <p>Premium handcrafted flower and knit bouquets, delivered with love across Klang Valley and beyond.</p>
+      <div class="footer-socials">
+        <a href="#" aria-label="Instagram">📸</a>
+        <a href="#" aria-label="WhatsApp">💬</a>
+        <a href="#" aria-label="Facebook">👍</a>
+        <a href="#" aria-label="TikTok">🎵</a>
+      </div>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links 快速链接</h4>
+      <a href="#" onclick="showPage('home')">Home 首页</a>
+      <a href="#" onclick="showPage('shop')">Shop 商品</a>
+      <a href="#" onclick="showPage('build')">Build Bouquet 自定花束</a>
+      <a href="#" onclick="showPage('about')">About Us 关于我们</a>
+      <a href="#" onclick="showPage('delivery')">Delivery 配送</a>
+      <a href="#" onclick="showPage('contact')">Contact 联系</a>
+    </div>
+    <div class="footer-links">
+      <h4>Occasions 节日</h4>
+      <a href="#" onclick="filterShop('birthday');showPage('shop')">Birthday 生日</a>
+      <a href="#" onclick="filterShop('graduation');showPage('shop')">Graduation 毕业</a>
+      <a href="#" onclick="filterShop('valentine');showPage('shop')">Valentine's 情人节</a>
+      <a href="#" onclick="filterShop('mothers');showPage('shop')">Mother's Day 母亲节</a>
+      <a href="#" onclick="filterShop('opening');showPage('shop')">Grand Opening 开业</a>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact 联系方式</h4>
+      <p>📱 +60 12-643 2729</p>
+      <p>✉️ hello@gabuu.com</p>
+      <p>📸 @gabuu.blooms</p>
+      <p>📍 Kuala Lumpur, Malaysia</p>
+      <a href="https://wa.me/60126432729" target="_blank" class="btn-whatsapp footer-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order on WhatsApp 订购
+      </a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 GaBuu. All rights reserved. · 保留所有权利</p>
+    <p>Crafted with 🌸 in Kuala Lumpur, Malaysia</p>
+  </div>
+</footer>
+
+<!-- Toast -->
+<div class="toast" id="toast"></div>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/60126432729" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="app.js"></script>
+</body>
+</html>
