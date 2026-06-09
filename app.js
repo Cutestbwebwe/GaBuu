@@ -331,13 +331,42 @@ function addToCart(id) {
 }
 
 function addCustomToCart() {
-  if (!buildSelections.size) { showToast('Please select a size first! 请先选择尺寸'); return; }
+  function addCustomToCart() {
+  if (!buildSelections.size) { 
+    showToast('Please select a size first! 请先选择尺寸'); 
+    return; 
+  }
+  
+  // 获取基础价格
   const basePrice = parseInt(buildSelections.size.match(/RM(\d+)/)?.[1] || 88);
+  
+  // 计算 Add-ons 的额外价钱
+  let addonsPrice = 0;
+  let addonsSelected = [];
+  
+  const addonsMap = {
+    'teddy': { price: 25, label: '🧸 Teddy Bear' },
+    'choc': { price: 18, label: '🍫 Chocolates' },
+    'perfume': { price: 35, label: '🕯️ Scented Candle' },
+    'balloon': { price: 12, label: '🎈 Balloon' }
+  };
+  
+  document.querySelectorAll('#buildStep5 .addon-item input[type="checkbox"]:checked').forEach(checkbox => {
+    const value = checkbox.value;
+    if (addonsMap[value]) {
+      addonsPrice += addonsMap[value].price;
+      addonsSelected.push(addonsMap[value].label);
+    }
+  });
+  
+  // 总价 = 基础价 + Add-ons 价
+  const totalPrice = basePrice + addonsPrice;
+  
   cart.push({
     id: 'custom-' + Date.now(),
     name: 'Custom Bouquet 自定花束',
-    price: basePrice,
-    priceDisplay: `From RM${basePrice}`,
+    price: totalPrice,
+    priceDisplay: `RM${totalPrice}`,
     emoji: '🌸',
     qty: 1,
     size: buildSelections.size,
@@ -345,12 +374,23 @@ function addCustomToCart() {
     flowers: buildSelections.flowers.join(', '),
     color: buildSelections.color,
     message: document.getElementById('buildMessage')?.value || '',
+    addons: addonsSelected.join(', '),
+    addonPrice: addonsPrice,
     custom: true
   });
+  
   saveCart();
   updateCartBadge();
-  showToast('🌸 Custom bouquet added! 自定花束已加入购物车');
+  
+  let toastMsg = `🌸 Custom bouquet added! RM${totalPrice}`;
+  if (addonsPrice > 0) {
+    toastMsg += `\n(Bouquet: RM${basePrice} + Add-ons: RM${addonsPrice})`;
+  }
+  toastMsg += '\n自定花束已加入购物车';
+  
+  showToast(toastMsg);
   showPage('cart');
+}
 }
 
 function saveCart() { localStorage.setItem('gabuuCart', JSON.stringify(cart)); }
@@ -374,7 +414,12 @@ function renderCart() {
       <div class="cart-item-img">${item.emoji}</div>
       <div class="cart-item-info">
         <div class="cart-item-name">${item.name}</div>
-        <div class="cart-item-meta">${item.size || ''}${item.color ? ' · ' + item.color : ''}${item.message ? ' · "' + item.message.substring(0,30) + (item.message.length>30?'...':'') + '"' : ''}</div>
+        <div class="cart-item-meta">
+        ${item.size || ''}
+  ${item.color ? ' · ' + item.color : ''}
+  ${item.addons ? ' · Add-ons: ' + item.addons : ''}
+  ${item.message ? ' · "' + item.message.substring(0,30) + (item.message.length>30?'...':'') + '"' : ''}
+</div>
         <div class="cart-item-controls">
           <button class="qty-btn" onclick="updateQty(${idx},-1)">−</button>
           <span class="qty-num">${item.qty}</span>
